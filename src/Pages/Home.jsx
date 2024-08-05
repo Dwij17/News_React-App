@@ -1,15 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import Cata from "../Catagories/Cata";
 
 export default function Home() {
+
+  let [National, setNational] = useState([]);
+
+  useEffect(()=>{
+    fetch("https://inshortsapi.vercel.app/news?category=national")
+      .then((response)=>{
+        return response.json();
+      })
+      .then((data)=>{
+        setNational(data["data"]);
+      })
+  },[]);
+
   return (
     <>
-      
-
       <section id="home" className="w3l-banner py-5">
         <div className="container py-lg-5 mt-lg-5">
           <div className="py-lg-4 my-2">
             <div className="banner-info-grid mt-lg-5">
-              <h3 className="mb-4">Stylish Creative Designs.</h3>
+              <h3 className="mb-4">Today's Breakign News</h3>
               <section id="bottom" className="demo">
                 <a href="#bottom">
                   <span></span>Scroll
@@ -20,7 +33,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="w3l-bottom-grids-6 py-5" id="bottom">
+      {/* <section className="w3l-bottom-grids-6 py-5" id="bottom">
         <div className="container py-lg-5 py-md-4 py-2">
           <div className="grids-area-hny main-cont-wthree-fea row">
             <div className="col-lg-4 col-md-6 grids-feature">
@@ -67,264 +80,43 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
-      <section className="w3l-portfolio-8 py-5">
+      
+
+{/* <section className="w3l-portfolio-8 py-5">
         <div className="portfolio-main py-lg-5 py-md-4 py-2">
           <div className="container">
             <div className="row galler-top">
-              <div className="col-lg-3 col-sm-6 protfolio-item hover14">
-                <figure>
-                  <img
-                    src="assets/images/p1.jpg"
-                    alt="product"
-                    className="img-fluid"
-                  />
-                  <div className="img-info">
-                    <a href="#url" className="img-title">
-                      UI experience
-                    </a>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Cupiditate, quia.
-                    </p>
-                  </div>
-                </figure>
-              </div>
-              <div className="col-lg-3 col-sm-6 protfolio-item hover14">
-                <figure>
-                  <img
-                    src="assets/images/p2.jpg"
-                    alt="product"
-                    className="img-fluid"
-                  />
-                  <div className="img-info">
-                    <a href="#url" className="img-title">
-                      Wordpress
-                    </a>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Cupiditate, quia.
-                    </p>
-                  </div>
-                </figure>
-              </div>
-              <div className="col-lg-3 col-sm-6 protfolio-item hover14">
-                <figure>
-                  <img
-                    src="assets/images/p3.jpg"
-                    alt="product"
-                    className="img-fluid"
-                  />
-                  <div className="img-info">
-                    <a href="#url" className="img-title">
-                      Ecommerce
-                    </a>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Cupiditate, quia.
-                    </p>
-                  </div>
-                </figure>
-              </div>
-              <div className="col-lg-3 col-sm-6 protfolio-item hover14">
-                <figure>
-                  <img
-                    src="assets/images/p4.jpg"
-                    alt="product"
-                    className="img-fluid"
-                  />
-                  <div className="img-info">
-                    <a href="#url" className="img-title">
-                      Headphones
-                    </a>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Cupiditate, quia.
-                    </p>
-                  </div>
-                </figure>
-              </div>
-              <div className="col-lg-3 col-sm-6 protfolio-item hover14">
-                <figure>
-                  <img
-                    src="assets/images/p5.jpg"
-                    alt="product"
-                    className="img-fluid"
-                  />
-                  <div className="img-info">
-                    <a href="#url" className="img-title">
-                      Mobile app
-                    </a>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Cupiditate, quia.
-                    </p>
-                  </div>
-                </figure>
-              </div>
-              <div className="col-lg-3 col-sm-6 protfolio-item hover14">
-                <figure>
-                  <img
-                    src="assets/images/p6.jpg"
-                    alt="product"
-                    className="img-fluid"
-                  />
-                  <div className="img-info">
-                    <a href="#url" className="img-title">
-                      Modern Ideas
-                    </a>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Cupiditate, quia.
-                    </p>
-                  </div>
-                </figure>
-              </div>
-              <div className="col-lg-3 col-sm-6 protfolio-item hover14">
-                <figure>
-                  <img
-                    src="assets/images/p8.jpg"
-                    alt="product"
-                    className="img-fluid"
-                  />
-                  <div className="img-info">
-                    <a href="#url" className="img-title">
-                      Creativity
-                    </a>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Cupiditate, quia.
-                    </p>
-                  </div>
-                </figure>
-              </div>
-              <div className="col-lg-3 col-sm-6 protfolio-item hover14">
-                <figure>
-                  <img
-                    src="assets/images/p7.jpg"
-                    alt="product"
-                    className="img-fluid"
-                  />
-                  <div className="img-info">
-                    <a href="#url" className="img-title">
-                      Fashion design
-                    </a>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Cupiditate, quia.
-                    </p>
-                  </div>
-                </figure>
-              </div>
+              {National.map((value)=>{
+                return (
+                  <div className="col-lg-6 col-sm-6 protfolio-item hover14 mt-1 border ">
+                  <figure>
+                    <img
+                      src={value.imageUrl}
+                      alt="News"
+                      className="img-fluid"
+                      style={{ height: "400px",width: '100%'}}
+                    />
+                    <div className="img-info">
+                      <Link to={value.readMoreUrl} className="img-title">
+                        {value.title}
+                      </Link>
+                      <p>
+                      Author Name : {value.author}
+                      </p>
+                    </div>
+                  </figure>
+                </div>
+                )
+              })}
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
-      <section className="w3l-servicesblock1 py-5" id="moreservices">
-        <div className="container py-lg-5 py-md-4 py-3">
-          <div className="grids-area-hny main-cont-wthree-fea row ">
-            <div className="col-lg-4 col-md-6 grids-feature">
-              <div className="area-box">
-                <span className="fa fa-retweet mt-0"></span>
-                <div className="area-box-info">
-                  <h4>
-                    <a href="#feature" className="title-head">
-                      Social Media Strategy
-                    </a>
-                  </h4>
-                  <p className="mt-lg-3 mt-2">
-                    Vivamus a ligula quam tesque et libero justo, ultrices in.
-                    Ut eu leo non. Duis sed et dolor sit amet.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-6 grids-feature mt-md-0 mt-5">
-              <div className="area-box">
-                <span className="fa fa-clock-o mt-0"></span>
-                <div className="area-box-info">
-                  <h4>
-                    <a href="#feature" className="title-head">
-                      Branding Strategy
-                    </a>
-                  </h4>
-                  <p className="mt-lg-3 mt-2">
-                    Vivamus a ligula quam tesque et libero justo, ultrices in.
-                    Ut eu leo non. Duis sed et dolor sit amet.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-6 grids-feature mt-lg-0 mt-5">
-              <div className="area-box">
-                <span className="fa fa-line-chart mt-0"></span>
-                <div className="area-box-info">
-                  <h4>
-                    <a href="#feature" className="title-head">
-                      UI/UX Design
-                    </a>
-                  </h4>
-                  <p className="mt-lg-3 mt-2">
-                    Vivamus a ligula quam tesque et libero justo, ultrices in.
-                    Ut eu leo non. Duis sed et dolor sit amet.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-6 grids-feature mt-5 pt-lg-4">
-              <div className="area-box">
-                <span className="fa fa-trash-o mt-0"></span>
-                <div className="area-box-info">
-                  <h4>
-                    <a href="#feature" className="title-head">
-                      Digital Product Strategy
-                    </a>
-                  </h4>
-                  <p className="mt-lg-3 mt-2">
-                    Vivamus a ligula quam tesque et libero justo, ultrices in.
-                    Ut eu leo non. Duis sed et dolor sit amet.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-6 grids-feature mt-5 pt-lg-4">
-              <div className="area-box">
-                <span className="fa fa-video-camera mt-0"></span>
-                <div className="area-box-info">
-                  <h4>
-                    <a href="#feature" className="title-head">
-                      Web Hosting Service
-                    </a>
-                  </h4>
-                  <p className="mt-lg-3 mt-2">
-                    Vivamus a ligula quam tesque et libero justo, ultrices in.
-                    Ut eu leo non. Duis sed et dolor sit amet.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-6 grids-feature mt-5 pt-lg-4">
-              <div className="area-box">
-                <span className="fa fa-search-plus mt-0"></span>
-                <div className="area-box-info">
-                  <h4>
-                    <a href="#feature" className="title-head">
-                      SEO Services
-                    </a>
-                  </h4>
-                  <p className="mt-lg-3 mt-2">
-                    Vivamus a ligula quam tesque et libero justo, ultrices in.
-                    Ut eu leo non. Duis sed et dolor sit amet.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section className="w3l-servicesblock py-5" id="services">
+      <Cata />
+      {/* <section className="w3l-servicesblock py-5" id="services">
         <div className="container py-lg-5 py-md-4 py-2">
           <div className="row">
             <div className="col-lg-6 about-right-faq align-self">
@@ -404,9 +196,9 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
-      <div className="w3l-news" id="news">
+      {/* <div className="w3l-news" id="news">
         <section id="grids5-block" className="py-5">
           <div className="container py-lg-5 py-md-4 py-2">
             <h3 className="title-big text-center">See what’s going on</h3>
@@ -492,6 +284,48 @@ export default function Home() {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+      </div> */}
+
+<div className="w3l-news" id="news">
+        <section id="grids5-block" className="py-5">
+          <div className="container py-lg-5 py-md-4 py-2">
+            <h3 className="title-big text-center">National News</h3>
+            <div className="row mt-lg-5 mt-4">
+              {National.map((value) => {
+                return (
+                  <div className="col-lg-6 col-md-6 mt-md-0 mt-sm-4 mb-5">
+                    <div className="grids5-info">
+                      <a href="#blog-single" className="d-block zoom">
+                        <img
+                          src={value.imageUrl}
+                          alt=""
+                          className="img-fluid news-image"
+                          style={{ height: "300px" }}
+                        />
+                      </a>
+                      <div className="blog-info">
+                        <h4>
+                          <Link to={value.readMoreUrl}>{value.title}</Link>
+                        </h4>
+                        <p className="date">
+                          <span className="fa fa-calendar mr-2"></span>{" "}
+                          {value.date}
+                        </p>
+                        <p>{value.content}</p>
+                        <Link
+                          to={value.readMoreUrl}
+                          className="btn btn-news mt-4 "
+                        >
+                          Read More
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -632,7 +466,7 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="w3l-faq-block py-5" id="faq">
+      {/* <div className="w3l-faq-block py-5" id="faq">
         <div className="container py-lg-5">
           <div className="row">
             <div className="col-lg-6 pr-lg-5">
@@ -712,7 +546,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <section className="w3l-bottom py-5" id="newsletter">
         <div className="container py-md-5 py-md-4 text-center">

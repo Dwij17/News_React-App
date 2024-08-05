@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 export default function Footer() {
   return (
-    <div>
+    <>
       <section className="w3l-footer-29-main">
         <div className="footer-29 py-5">
           <div className="container py-lg-4">
@@ -98,20 +98,18 @@ export default function Footer() {
             </div>
           </div>
         </div>
-      </section>
       <section className="w3l-copyright text-center">
         <div className="container">
           <p className="copy-footer-29">
-            © 2020 Web Service. All rights reserved. Design by{" "}
+            © 2024 Web Service. All rights reserved. Design by{" "}
             <Link to="https://w3layouts.com/" target="_blank">
-              W3layouts
+              Dwij Patel
             </Link>
           </p>
         </div>
       </section>
-      <button onclick="topFunction()" id="movetop" title="Go to top">
-        &#10548;
-      </button>
-    </div>
+    </section>
+    </>
+      
   )
 }

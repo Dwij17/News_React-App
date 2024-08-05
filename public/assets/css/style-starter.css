@@ -10299,7 +10299,7 @@ header.nav-fixed {
 
 /*-- banner --*/
 .w3l-banner {
-  background: url(../images/bannerbg.jpg) no-repeat 0px 0px;
+  background: url(../images/newsbanner.jpg) no-repeat 0px 0px;
   -ms-background-size: cover;
   background-size: cover;
   z-index: 0;
@@ -11377,7 +11377,7 @@ button.owl-next {
 
 .breadcrumb-bg-about {
   background-size: cover;
-  background-image: linear-gradient(to right, rgba(25, 25, 25, 0.7), rgba(0, 0, 0, 0.7)), url(../images/innerbg.jpg);
+  background-image: linear-gradient(to right, rgba(25, 25, 25, 0.7), rgba(0, 0, 0, 0.7)), url(../images/olympics.jpg);
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-position: center;
   background-attachment: fixed; }

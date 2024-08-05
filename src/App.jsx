@@ -1,40 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Home from './Pages/Home'
-import About from './Pages/About'
-import Contact from './Pages/Contact'
-import Services from './Pages/Services'
-import Header from './Common/Header'
-import Footer from './Common/Footer'
-import * as rb from 'react-router-dom'
+import { BrowserRouter as Router, Route, Routes, Outlet } from 'react-router-dom';
+import Home from './Pages/Home';
+import About from './Pages/About';
+import Contact from './Pages/Contact';
+import Services from './Pages/Services';
+import Header from './Common/Header';
+import Footer from './Common/Footer';
+import Sport from './Catagories/Sports'; // Make sure the file name matches
 
 function Base() {
-  return(
+  return (
     <>
-      <Header/>
-      <rb.Outlet/>
-      <Footer/>
+      <Header />
+      <Outlet />
+      <Footer />
     </>
   );
 }
 
 function App() {
   return (
-    <>
-      <rb.BrowserRouter>
-        <rb.Routes>
-          <rb.Route element={<Base/>} path='/'>
-            <rb.Route path='' element={<Home/>}/>
-            <rb.Route path='/about' element={<About/>}/>
-            <rb.Route path='/contact' element={<Contact/>}/>
-            <rb.Route path='/services' element={<Services/>}/>
-          </rb.Route>
-        </rb.Routes>
-      </rb.BrowserRouter>
-    </>
-  )
+    <Router>
+      <Routes>
+        <Route element={<Base />} path='/'>
+          <Route index element={<Home />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path='/services' element={<Services />} />
+          <Route path='/:category' element={<Sport />} /> {/* Dynamic route for categories */}
+        </Route>
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;

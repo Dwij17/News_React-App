@@ -7,9 +7,14 @@ export default function Header() {
       <header id="site-header" className="fixed-top">
         <div className="container">
           <nav className="navbar navbar-expand-lg navbar-dark stroke">
+          <img
+                src="/icon-news.svg"
+                alt="Your logo"
+                title="Your logo"
+                style={{height:'60px',marginRight: '30px'}}/>
             <h1>
-              <Link className="navbar-brand" to="index.html">
-                Daily News
+              <Link className="navbar-brand" to="">
+                News-Hub
               </Link>
             </h1>
 
@@ -31,17 +36,17 @@ export default function Header() {
               <ul className="navbar-nav ml-auto mr-5">
                 <li className="nav-item active">
                   <Link className="nav-link" to="">
-                    Home <span className="sr-only">(current)</span>
+                    News <span className="sr-only">(current)</span>
                   </Link>
                 </li>
                 <li className="nav-item @@about__active">
                   <Link className="nav-link" to="/about">
-                    About
+                    catagory
                   </Link>
                 </li>
                 <li className="nav-item @@services__active">
                   <Link className="nav-link" to="/services">
-                    Services
+                    Artical
                   </Link>
                 </li>
                 <li className="nav-item @@contact__active">
@@ -69,15 +74,7 @@ export default function Header() {
 
             <div className="mobile-position">
               <nav className="navigation">
-                <div className="theme-switch-wrapper">
-                  <label className="theme-switch" for="checkbox">
-                    <input type="checkbox" id="checkbox" />
-                    <div className="mode-container py-1">
-                      <i className="gg-sun"></i>
-                      <i className="gg-moon"></i>
-                    </div>
-                  </label>
-                </div>
+                
               </nav>
             </div>
           </nav>
